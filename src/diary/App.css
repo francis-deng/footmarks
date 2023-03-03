@@ -1,0 +1,112 @@
+body {
+    background: RGB(248,248,248);
+    margin: 0;
+}  
+
+.slide {
+    position: absolute;
+    left: -20em;
+    top: 0;
+    width: 20em;
+    height: 100%;
+    background: #555;
+    transition: left linear .3s;
+}
+
+.container-menu {
+    display: inline;
+    background: rgb(59,180,193)
+}	
+
+.container-menu-button {
+    display: inline-block;
+    width: 4.5em;
+}
+
+.container-menu-date {
+    display: inline-block;
+    width: 10em;		
+}
+
+.container-menu-find {
+    
+}		
+
+.container-menu-miscellaneous {
+    position: absolute;
+    right: 0.5em;
+}		
+
+
+
+
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    row-gap: 0.3em;
+}
+
+.article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    row-gap: 0.3em;	
+}
+
+.day {
+    display: inline;
+    width: 6em;
+    background-color:RGB(248,248,248);
+}
+        
+.day .day-of-month{
+    display: block;
+    text-align:center;
+    font-size: 1.2em;
+    margin: 0 auto;
+}
+
+.day .month-and-day-of-week{
+    display: block;
+    text-align:center;
+    font-size: 0.3em;
+    margin: 0 auto;
+}
+
+.content {
+    background-color: white;
+    border:0.1em solid rgb(239,239,239);
+    border-radius: 15px;
+}
+
+.content .text {
+    width: 30em;
+    margin: 0.5em;
+}
+
+.content .images {
+    width: 30em;
+    margin: 0.5em;
+}
+
+.content .images {
+    width: 30em;
+    margin: 0.5em;
+}
+
+.content .end-of-content {
+    width: 30em;
+    margin: 0.5em;
+}		
+
+.pen {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
