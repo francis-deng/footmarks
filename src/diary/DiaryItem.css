@@ -1,0 +1,35 @@
+body {
+    background: RGB(248,248,248);
+    margin: 0;
+} 
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    row-gap: 0.3em;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.toolbar .close {
+    display: inline-block;
+    width: 4em;
+    margin-left: 0.5em;
+}
+
+.font-setting {
+    color: rgb(156,157,164);
+    letter-spacing: 0.1em;
+}
+
+.content {
+    height: 20em;
+    margin: 0.5em;
+}
+

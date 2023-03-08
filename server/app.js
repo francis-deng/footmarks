@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
 import router from './router';
 import fileUpload from 'express-fileupload';
+const cors = require('cors');
 
 dotenv.config();
 const express = require('express');
@@ -12,6 +13,12 @@ app.use('/images', express.static(process.env.IMAGES_PATH));
 //app.use(express.bodyParser());
 // get rid of X-Powered-By
 app.disable('x-powered-by');
+
+// CORS
+app.use(cors({
+  origin: '*'
+}));
+
 
 // enable files upload
 app.use(fileUpload({

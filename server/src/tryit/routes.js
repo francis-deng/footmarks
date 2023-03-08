@@ -6,23 +6,54 @@ const router = express.Router();
 
 // multiple files upload form(MFUF)
 router.get("/mfuf", (req, res) => {
-    let up = 'http://localhost:30000/tryit/mfuf/upload';
+    let up = 'http://localhost:30001/tryit/mfuf/upload';
     let mfuf = `
     <html>
 
     <head>
-    <title>multiple files upload form</title>
+        <title>multiple files upload form</title>
+        <script>
+            var files;
+
+            var handleFileChange = (e)=>{
+                console.log(e.files);
+                files = e.files;
+            }
+
+            var uploadFiles = ()=>{
+                if (!files) {
+                    return;
+                }
+
+                var data = new FormData();
+                data.append("myId", 911911);
+                /*
+                files.forEach((file,index)=>{
+                    data.append("img"+index,file,file.name);
+                });
+                */
+                for (var index=0;index<files.length;index++){
+                    data.append("img"+index,files[index],files[index].name);
+                }
+
+                fetch("${up}", {
+                    method: "POST",
+                    body: data,
+                })
+                .then((data) => console.log(data))
+                .catch((err)=>{
+                  console.log("err: ",err)  
+                });
+            }
+        </script>
     </head>
     
     <body>
-    <form method="POST" action="${up}" enctype="multipart/form-data" target="frameName">
-        <input type="text" name="myId" value="9911911" /><p/>
-        <input type="file" name="myFile" /><p/>
-        <input type="file" name="myPicture" /><p/>
-        <input type="file" name="myVideo" /><p/>
-        <input type="submit" />
-      </form>
-      <iframe src="" frameborder="0" name="frameName"></iframe>
+        <div>
+            <div>upload files:</div>
+            <button id="bInput" onclick="uploadFiles()">upload files</button><p/>
+            <input id="fInput" type="file" onchange="handleFileChange(this)" accept=”.png, .jpg, .jpeg” multiple/>
+        </div>
     </body>
     
     </html>`;
@@ -51,7 +82,7 @@ router.post('/mfuf/upload',
                     return res.status(500).send(err);
                 }
 
-                console.log({ status: "success", path: path });
+                console.log({ status: "move success", path: path });
             })
         }
 

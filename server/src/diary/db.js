@@ -53,7 +53,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const sqlite3 = require('sqlite3');
+const sqlite3 = require('sqlite3').verbose();
 const dbPath = process.env.DB_PATH;
 const dbFile = dbPath.concat('/diary.sqlite');
 
@@ -83,18 +83,18 @@ function createDatabase() {
 function createTables(newdb) {
     newdb.exec(`
     CREATE TABLE IF NOT EXISTS diaries (
-        id INTEGER primary key not null,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT,
-        author text,
+        author TEXT,
         content TEXT,
         ts INTEGER not null,
         weather TEXT,
         location TEXT,
         deivce TEXT,
         wc TEXT,
+        img0 TEXT,
         img1 TEXT,
-        img2 TEXT,
-        img3 TEXT
+        img2 TEXT
     );
 
     CREATE TABLE IF NOT EXISTS diaries_images (

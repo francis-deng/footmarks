@@ -1,0 +1,22 @@
+
+.images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;		
+}	
+
+.images .add-image {
+    display: inline-block;
+    height: 100px;
+    width: 100px;		
+    background-color:rgb(240,240,240);
+    border-radius: 8px;
+    margin: 0.5em;
+}
+
+.images .add-image .one-image {
+    display: inline-block;
+    width: 100px;
+    heigh: 100px;
+}
