@@ -47,10 +47,10 @@ module.exports = (req, res) => {
         }
     );    
 
-    console.log("all rows:");
-    db.serialize(() => {
-        db.all('SELECT * FROM diaries ORDER BY ts DESC', (err, rows) => {
-            console.log(rows);
-        });
-    });
+    // console.log("all rows:");
+    // db.serialize(() => {
+    //     db.all('SELECT * FROM diaries ORDER BY ts DESC', (err, rows) => {
+    //         console.log(rows);
+    //     });
+    // });
 }
