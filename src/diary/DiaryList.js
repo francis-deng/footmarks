@@ -27,10 +27,10 @@ function DiaryList() {
             }
         });
     };   
+
+    const footmarksServerHttp = conf.FOOTMARKS_SERVER_HTTP;
     
     useEffect(()=>{
-        const footmarksServerHttp = conf.FOOTMARKS_SERVER_HTTP;
-
         fetch(footmarksServerHttp + "/diary/list", {
             method: "GET",
             headers: {
