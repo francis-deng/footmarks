@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import {useState,useRef,useEffect} from 'react';
 import { useLocation,useNavigate } from "react-router-dom";
+import conf from './conf';
 
 import "./DiaryList.css";
 
@@ -28,7 +29,9 @@ function DiaryList() {
     };   
     
     useEffect(()=>{
-        fetch("http://localhost:30001/diary/list", {
+        const footmarksServerHttp = conf.FOOTMARKS_SERVER_HTTP;
+
+        fetch(footmarksServerHttp + "/diary/list", {
             method: "GET",
             headers: {
                 'Origin': 'http://localhost:30000'

@@ -1,6 +1,7 @@
 
 import {useState,useRef,useEffect} from 'react';
 import { useLocation,useNavigate } from "react-router-dom";
+import conf from './conf';
 
 import Gallery from "./Gallery";
 import "./DiaryItem.css";
@@ -47,7 +48,9 @@ function DiaryItem() {
             console.log("FormData:\n");
             console.log(data);
 
-            fetch("http://localhost:30001/diary/new", {
+            const footmarksServerHttp = conf.FOOTMARKS_SERVER_HTTP;
+
+            fetch(footmarksServerHttp + "/diary/new", {
                 method: "POST",
                 body: data,
             })
