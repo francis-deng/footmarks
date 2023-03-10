@@ -89,7 +89,7 @@ function DiaryList() {
                 console.log("key:" + key);
                 if (key.startsWith("img")) {
                     if (d[key]) {
-                        ret.push("http://localhost:30001/images/" + d[key]);
+                        ret.push(footmarksServerHttp + "/images/" + d[key]);
                     }
                     
                 }
